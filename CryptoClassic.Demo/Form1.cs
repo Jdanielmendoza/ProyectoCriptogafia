@@ -4,7 +4,9 @@
     using CryptoClassic.Core.Caesar;   // ← importar los que se vaya creando
     using CryptoClassic.Core.Keyword;
     using CryptoClassic.Core.Substitution;
-    using CryptoClassic.Core.Substitution;
+    using CryptoClassic.Core.Transposition;
+    using CryptoClassic.Core.Hill;
+    using CryptoClassic.Core.Attacks;
     using System.Collections.Generic;
 
     public partial class Form1 : Form
@@ -19,16 +21,31 @@
         {
             new CaesarCipher(),
              new KeywordCipher(),
-               new AffineCipher() ,
-               new PolyAlphabeticCipher()
+             new AffineCipher() ,
+             new PolyAlphabeticCipher(),
+             new ZigZagCipher() ,
+             new ColumnarCipher(),
+             new PlayfairCipher() ,
+             new HillCipher(),
+             new KasiskiAttack()
             // Ej.: new KeywordCipher(), new AffineCipher()…
         };
+
+            //Placeholders 
             cmbCipher.SelectedIndexChanged += (s, e) =>
             {
-                txtKey.PlaceholderText =
-                    cmbCipher.SelectedItem is PolyAlphabeticCipher ? "Palabra clave…" :
-                    cmbCipher.SelectedItem is AffineCipher ? "a,b  (ej. 5,8)" :
-                                                                       "Clave…";
+                txtKey.Enabled = !(cmbCipher.SelectedItem is KasiskiAttack);
+                txtKey.PlaceholderText = cmbCipher.SelectedItem switch
+                {
+                    KasiskiAttack => "(sin clave)",
+                    HillCipher => "Matriz 2×2 o 3×3",
+                    PlayfairCipher => "Palabra clave…",
+                    ColumnarCipher => "Palabra clave columnas…",
+                    ZigZagCipher => "Número de rieles (≥2)",
+                    PolyAlphabeticCipher => "Palabra clave…",
+                    AffineCipher => "a,b  (ej. 5,8)",
+                    _ => "Clave…"
+                };
             };
             // 2️⃣  Enlázala al ComboBox
             cmbCipher.DataSource = _ciphers;
