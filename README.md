@@ -103,5 +103,10 @@ _ciphers = new List<ICipher>
 > * ✅ Cifrado de palabra clave implementada y funcional en la GUI.
 > * ✅ Cifrado Afin implementada y funcional en la GUI.
 > * ✅ Cifrado Vigenère implementada y funcional en la GUI.
+> * ✅ Cifrado Transposición – Grupos implementada y funcional en la GUI.
+> * ✅ Cifrado Transposición – Columnas implementada y funcional en la GUI.
+> * ✅ Cifrado Transposición – Zig-Zag (Rail Fence) implementada y funcional en la GUI.
+> * ✅ Cifrado Playfair implementada y funcional en la GUI.
+> * ✅ Cifrado Hill implementada y funcional en la GUI.
 > * ⏳ Se irán añadiendo los demás siguiendo el mismo patrón (`ICipher`).
 ---
