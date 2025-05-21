@@ -1,7 +1,10 @@
 ﻿namespace CryptoClassic.Demo
 {
     using CryptoClassic.Core.Interfaces;
-    using CryptoClassic.Core.Caesar;   // ← importa los que vayas creando
+    using CryptoClassic.Core.Caesar;   // ← importar los que se vaya creando
+    using CryptoClassic.Core.Keyword;
+    using CryptoClassic.Core.Substitution;
+    using CryptoClassic.Core.Substitution;
     using System.Collections.Generic;
 
     public partial class Form1 : Form
@@ -14,10 +17,19 @@
             // 1️⃣  Instancia la lista (por ahora solo César)
             _ciphers = new List<ICipher>
         {
-            new CaesarCipher()
+            new CaesarCipher(),
+             new KeywordCipher(),
+               new AffineCipher() ,
+               new PolyAlphabeticCipher()
             // Ej.: new KeywordCipher(), new AffineCipher()…
         };
-
+            cmbCipher.SelectedIndexChanged += (s, e) =>
+            {
+                txtKey.PlaceholderText =
+                    cmbCipher.SelectedItem is PolyAlphabeticCipher ? "Palabra clave…" :
+                    cmbCipher.SelectedItem is AffineCipher ? "a,b  (ej. 5,8)" :
+                                                                       "Clave…";
+            };
             // 2️⃣  Enlázala al ComboBox
             cmbCipher.DataSource = _ciphers;
             cmbCipher.DisplayMember = "Name";

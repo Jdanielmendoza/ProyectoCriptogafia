@@ -9,11 +9,9 @@
 
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Keyword\" />
     <Folder Include="Hill\" />
     <Folder Include="Attacks\" />
     <Folder Include="Transposition\" />
-    <Folder Include="Substitution\" />
   </ItemGroup>
 
 </Project>

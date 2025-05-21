@@ -6,7 +6,7 @@ namespace CryptoClassic.Core.Caesar
 {
     public class CaesarCipher : ICipher
     {
-        public string Name => "Cifra César";
+        public string Name => "Cifrado César";
         private const string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         public string Encrypt(string plaintext, object key)
