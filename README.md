@@ -100,5 +100,8 @@ _ciphers = new List<ICipher>
 > ***Estado actual***
 >
 > * ✅ Cifrado César implementada y funcional en la GUI.
+> * ✅ Cifrado de palabra clave implementada y funcional en la GUI.
+> * ✅ Cifrado Afin implementada y funcional en la GUI.
+> * ✅ Cifrado Vigenère implementada y funcional en la GUI.
 > * ⏳ Se irán añadiendo los demás siguiendo el mismo patrón (`ICipher`).
 ---
