@@ -11,7 +11,7 @@ namespace CryptoClassic.Core.Transposition
     {
         string ICipher.Name => "Transformación por filas";
 
-        string ICipher.Decrypt(string ciphertext, object key)
+        public string Decrypt(string ciphertext, object key)
         {
             if (!TryGetColumnsFromKey(key, out int columns))
                 throw new ArgumentException("La clave debe ser un número entero válido.");
@@ -42,7 +42,7 @@ namespace CryptoClassic.Core.Transposition
             return plaintext.ToString().TrimEnd();
         }
 
-        string ICipher.Encrypt(string plaintext, object key)
+        public string Encrypt(string plaintext, object key)
         {
             if (!TryGetColumnsFromKey(key, out int columns))
                 throw new ArgumentException("La clave debe ser un número entero válido.");
