@@ -27,7 +27,10 @@
              new ColumnarCipher(),
              new PlayfairCipher() ,
              new HillCipher(),
-             new KasiskiAttack()
+             new KasiskiAttack(),
+             new FilaCipher(),
+             new SerieCipher(),
+             new GrupoCipher(),
             // Ej.: new KeywordCipher(), new AffineCipher()…
         };
 
@@ -41,6 +44,9 @@
                     HillCipher => "Matriz 2×2 o 3×3",
                     PlayfairCipher => "Palabra clave…",
                     ColumnarCipher => "Palabra clave columnas…",
+                    FilaCipher => "Número de columnas...",
+                    SerieCipher => "Serie(ej. 2 1 3)",
+                    GrupoCipher => "Número de caracteres a agrupar",
                     ZigZagCipher => "Número de rieles (≥2)",
                     PolyAlphabeticCipher => "Palabra clave…",
                     AffineCipher => "a,b  (ej. 5,8)",
